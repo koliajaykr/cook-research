@@ -1,0 +1,748 @@
+---
+title: "Research Framework & <br>Literature Review Tools"
+subtitle: "Welcome to Lecture series on Research Essentials by C&M"
+author: Ajay Koli | Vishwakarma University - Pune
+date: "`r format(Sys.Date(), '%B %e, %Y')`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css/my-theme.css", "css/my-fonts.css"]
+    seal: false
+    lib_dir: libs
+    nature:
+      # autoplay: 5000
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
+      slideNumberFormat: "%current%/%total%" 
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(collapse = TRUE,
+                      fig.retina = 3,
+                      echo = FALSE)
+library(countdown)
+library(ymlthis)
+library(tidyverse)
+library(magick)
+library(icon)
+library(xaringanExtra)
+xaringanExtra::use_tachyons()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_webcam()
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = TRUE)
+xaringanExtra::use_share_again()
+xaringanExtra::use_editable(expires = 1)
+```
+
+layout: true
+
+---
+
+class: title-slide, center, middle, hide-count
+
+background-image: url("https://images.unsplash.com/photo-1606913079621-e64bd28682ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80")
+background-size: cover
+
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "Ajay Koli - Vishwakarma University",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "koliajaykr/plagiarism-zotero") %>% 
+  meta_social(
+    title = "Research Framework & Literature Review Tools",
+    url = "https://plag-zotero.netlify.app/",
+    image = "https://plag-zotero.netlify.app/images/social-card.png",
+    og_type = "talk",
+    og_author = "Ajay Koli",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@ajay_kolii"
+  ) %>%
+  include_meta()
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# `r rmarkdown::metadata$title`
+
+## .orange[`r rmarkdown::metadata$subtitle`]
+
+### `r rmarkdown::metadata$author` | `r format(Sys.Date(), "%d %B %Y") `
+
+---
+class: center, middle
+
+.pull-left[
+```{r , echo=FALSE, out.width="80%"}
+library(magick)
+magick::image_read("images/ajaykoli.png") 
+```
+
+`r icon::fa("twitter")`[@ajay_kolii](https://twitter.com/ajay_kolii) <br> 
+`r icon::fa("envelope")`   [koliajaykumar@gmail.com](koliajaykumar@gmail.com)
+
+]
+
+.pull-right[
+<br>
+<br>
+<br>
+<br>
+<br>
+# Hello !! `r emo::ji("blush")` <br> Ajay here.
+]
+
+---
+
+class: middle
+
+background-image: url("https://media0.giphy.com/media/QvMlVkJ3XSSj9cOxDM/giphy.gif?cid=ecf05e47oubsluctl3i87lrsu1u6m58fbk4um5kjhni65zmj&rid=giphy.gif&ct=g")
+background-size: 50%
+background-position: 95% 50%
+
+# I assume that: 
+
+- `r emo::ji("fire")` research hell `r emo::ji("fire")`
+
+--
+
+-  how to make it `less` painful?
+
+---
+
+background-image: url("https://images.unsplash.com/photo-1517856497829-3047e3fffae1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1738&q=80")
+background-size: cover
+
+.pull-left[
+# Why research?
+
+- "Research results in the .orange[creation of knowledge] to solve a problem, answer a question, and better describe or understand something."
+
+.footnote[
+
+Clough, P., & Nutbrown, C. (2012). A Student′ s Guide to Methodology. Sage. 
+
+]
+
+]
+
+--
+
+.pull-right[
+# Find your reason:
+  - education
+  - better opportunities
+  - curiosity
+  - targets
+  - policy critic
+  - climate change
+  - fame
+  - human rights for all genders & castes
+  - poverty alleviation
+  - consumption
+  - production
+  - medicine
+]
+
+
+
+---
+
+background-image: url("https://images.unsplash.com/photo-1558538337-aab544368de8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80")
+background-size: cover
+
+# .white.center[What is research?]
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+- .white[".red[is about .b[asking] questions, exploring problems] .green[and .b[reflecting] on what emerges in order to make meaning from the data] .blue[and tell the research .b[story]]"]
+
+.footnote[
+
+.white[Clough, P., & Nutbrown, C. (2012). A Student′ s Guide to Methodology. Sage. ]
+
+]
+
+---
+class: right
+
+background-image: url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1632&q=80")
+background-size: cover
+background-position: 
+
+# Let's cook some research `r emo::ji("man_cook")`
+
+--
+
+###- What to cook? <br>.green[Introduction + Literature review]
+
+--
+
+###- How to cook? <br>.green[Methodology]
+
+--
+
+###- What is the result of your cooking? <br>.green[Data analysis]
+
+--
+
+###- How similar or different is your dish? <br>.green[Discussion]
+
+--
+
+###-  So what, you cooked this dish `(shit)`? <br>.green[Conclusion]
+
+---
+class: right
+
+background-image: url("https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80")
+background-size: cover
+
+# .right.white[Research <br>Approaches]
+
+.pull-right[
+
+## .white.right[".green[plans and the procedures] for research that span the steps from broad .blue[assumptions] to detailed .red[methods] of data collection, analysis, and interpretation."
+.footnote[
+.white[Creswell, J. W., & Creswell, J. D. (2017). Research design: Qualitative, quantitative, and mixed methods approaches. Sage publications.]   
+]
+]
+
+]
+
+---
+class: right
+
+background-image: url("https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80")
+background-size: cover
+
+# .right.white[Research <br>Approaches]
+
+.pull-right[
+
+## .white[Qualitative]
+
+## .white[Quantitative, and]
+
+## .white[Mixed methods<sup>*</sup>]
+.footnote[
+.white[*] .white[University of Michigan, Mixed Methods Program http://www.mixedmethods.org/resources.html]   
+]
+]
+
+]
+
+---
+
+.pull-left[
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Qualitative methods, mixed methods, quantitative methods. <a href="https://t.co/6iv8izV6Ag">pic.twitter.com/6iv8izV6Ag</a></p>&mdash; Dr Raul Pacheco-Vega (@raulpacheco) <a href="https://twitter.com/raulpacheco/status/1458808875222802433?ref_src=twsrc%5Etfw">November 11, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
+
+.pull-right[
+.can-edit.key-approaches[
+# Why? `r emo::ji("thinking")` 
+
+1. Qual methods = 
+
+1. Mixed methods = 
+
+1. Quan methods = 
+]
+]
+
+---
+
+# Qualitative approach
+
+- "using .red[words]"
+
+--
+
+- "is an approach for exploring and understanding <br>the .red[meaning] individuals or groups ascribe <br>to a social or human problem."
+
+--
+
+- .red[flexible] report structure
+
+
+---
+
+background-image: url("https://thecolumnofcurae.files.wordpress.com/2020/07/23selvaratnam-mobilemasterat3x.jpg")
+background-size: 35%
+background-position: 99% 50% 
+
+# Qualitative approach
+
+- "using .red[words]"
+
+- "is an approach for exploring and understanding <br>the .red[meaning] individuals or groups ascribe <br>to a social or human problem."
+
+- .red[flexible] report structure
+
+- for example .red[violence]
+
+---
+
+background-image: url("https://static.vecteezy.com/system/resources/previews/002/715/966/non_2x/exhausted-tired-male-manager-in-office-sad-sitting-with-head-down-burnout-concept-illustration-with-exhausted-man-office-worker-sitting-at-the-table-stressful-work-stress-at-workplace-vector.jpg")
+background-size: 35%
+background-position: 99% 50% 
+
+# Qualitative approach
+
+- "using .red[words]"
+
+- "is an approach for exploring and understanding <br>the .red[meaning] individuals or groups ascribe <br>to a social or human problem."
+
+- .red[flexible] report structure
+
+- for example .red[work burnout]
+
+---
+
+background-image: url("https://www.mercedes-benz.com/en/lifestyle/studio-odeonsplatz/_jcr_content/image/MQ6-8-image-20211011170412/Studio-Odeonsplatz-The-Design-Edit-EQS-450-2560x1440.jpeg")
+background-size: 40%
+background-position: 99% 50% 
+
+# Qualitative approach
+
+- "using .red[words]"
+
+- "is an approach for exploring and understanding <br>the .red[meaning] individuals or groups ascribe <br>to a social or human problem."
+
+- .red[flexible] report structure
+
+- for example .red[luxury purchase]
+
+---
+
+# Quantitative approach
+
+- "use .red[numbers]"
+
+--
+
+- "is an approach for testing objective theories <br>by examining relationship among .red[variables]"
+
+--
+
+- set structure
+
+---
+
+background-image: url("https://www.usnews.com/dims4/USNEWS/efd80bb/2147483647/thumbnail/640x420/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fcb%2F24%2Fa96fd5194c44b9db58b0d9d835f3%2F160728-videogameviolence-stock.jpg")
+background-size: 40%
+background-position: 99% 50%
+
+# Quantitative approach
+
+- "use .red[numbers]"
+
+- "is an approach for testing objective theories <br>by examining relationship among .red[variables]"
+
+- set structure
+
+- example .red[games & violence]
+
+---
+
+background-image: url("https://us.123rf.com/450wm/samwordley/samwordley1905/samwordley190500204/122062853-addicted-man-chatting-and-surfing-on-the-internet-with-smart-phone-late-at-night-in-bed-bored-sleepl.jpg?ver=6")
+background-size: 40%
+background-position: 99% 50%
+
+# Quantitative approach
+
+- "use .red[numbers]"
+
+- "is an approach for testing objective theories <br>by examining relationship among .red[variables]"
+
+- set structure
+
+- example .red[mobile and sleep disorder]
+
+---
+
+background-image: url("https://cbk.bschool.cuhk.edu.hk/wp-content/uploads/shutterstock_1723731022.jpg")
+background-size: 40%
+background-position: 99% 50%
+
+# Quantitative approach
+
+- "use .red[numbers]"
+
+- "is an approach for testing objective theories <br>by examining relationship among .red[variables]"
+
+- set structure
+
+- example .red[shelf management]
+
+---
+
+# Mixed methods approach
+
+- "an approach to inquiry involving collecting <br>.red[ both] quantitative and qualitative data, <br>.red[integrating the two] forms of data, and <br>using distinct designs that may involve <br>philosophical assumptions and <br>theoretical frameworks."
+
+---
+
+background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thehoopsnews.com%2Fwp-content%2Fuploads%2F2015%2F11%2Fgender-gap-alcohol-consumption-960x540.jpg&f=1&nofb=1")
+background-size: 40%
+background-position: 99% 50%
+
+# Mixed methods approach
+
+- "an approach to inquiry involving collecting <br>.red[ both] quantitative and qualitative data, <br>.red[integrating the two] forms of data, and <br>using distinct designs that may involve <br>philosophical assumptions and <br>theoretical frameworks."
+
+
+- Example .red[gender & alcohol]
+
+.footnote[
+Paper link https://www.tandfonline.com/doi/abs/10.1080/08870446.2011.617444
+]
+
+---
+
+background-image: url("https://static.toiimg.com/photo/msid-73140552/73140552.jpg?1229324")
+background-size: 40%
+background-position: 99% 50%
+
+# Mixed methods approach
+
+- "an approach to inquiry involving collecting <br>.red[ both] quantitative and qualitative data, <br>.red[integrating the two] forms of data, and <br>using distinct designs that may involve <br>philosophical assumptions and <br>theoretical frameworks."
+
+
+- Example .red[student anxiety]
+
+.footnote[
+Paper link https://journals.sagepub.com/doi/abs/10.1177/0193945911408444
+]
+
+---
+
+background-image: url("https://marriageandfamilyonlineconferences.files.wordpress.com/2010/02/family.jpg")
+background-size: 40%
+background-position: 99% 50%
+
+# Mixed methods approach
+
+- "an approach to inquiry involving collecting <br>.red[ both] quantitative and qualitative data, <br>.red[integrating the two] forms of data, and <br>using distinct designs that may involve <br>philosophical assumptions and <br>theoretical frameworks."
+
+
+- Example .red[family formation]
+
+.footnote[
+Paper link https://journals.sagepub.com/doi/abs/10.1177/2345678906292238
+]
+
+---
+class: center, inverse, hide-count
+
+## .center.i.b[`r emo::ji("brain")` Brand preference and consumer emotions]
+
+.pull-left[
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("https://m.media-amazon.com/images/I/81YakxRZLzL._SL1500_.jpg")
+```
+]
+
+.pull-left[
+```{r echo=FALSE, out.width="50%"}
+  knitr::include_graphics("https://www.littleindia.pl/media/products/6f0444069f6334158a1c5ac04c78a59a/images/thumbnail/big_81RW3B40z0S-SX522-.jpg?lm=1630613860")
+```
+]
+
+```{r echo=FALSE, out.width="35%"}
+knitr::include_graphics("https://media.zigcdn.com/media/model/2020/Mar/royal-enfield-bullet-350-right-side-view_360x240.jpg")
+```
+
+
+`r countdown(minutes = 01, seconds = 00)`
+
+---
+class: center, inverse, hide-count
+
+# .center.i.b[`r emo::ji("brain")` Life-style and health]
+
+.pull-left[
+
+```{r echo=FALSE, out.width="50%"}
+  knitr::include_graphics("https://images-prod.healthline.com/hlcmsresource/images/topic_centers/WorkplaceHealth/Health_DontSitDown_08.jpg")
+ 
+```
+
+]
+
+.pull-left[
+
+```{r echo=FALSE, out.width="50%"}
+  knitr::include_graphics("https://image.shutterstock.com/image-vector/no-smoking-alcohol-sign-vector-260nw-204983548.jpg")
+```
+
+]
+
+.pull-right[
+
+```{r echo=FALSE, out.width="70%"}
+
+  knitr::include_graphics("https://www.wikihow.com/images/thumb/1/13/Start-Jogging-Step-7-Version-3.jpg/v4-460px-Start-Jogging-Step-7-Version-3.jpg.webp")
+```
+
+]
+
+`r countdown(minutes = 01, seconds = 00, left = 0, bottom = 0)`
+
+---
+
+background-image: url("https://images.unsplash.com/photo-1495195134817-aeb325a55b65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1752&q=80")
+background-size: cover
+background-position: 
+
+class: hide-count, middle, center
+
+# .big-text[Literature Review Tools]
+
+---
+
+class: hide-count
+
+.pull-left[
+```{r out.width="80%"}
+knitr::include_graphics("https://i.imgflip.com/5rlujd.jpg")
+```
+]
+
+.pull-right[
+```{r out.width="87%"}
+knitr::include_graphics("https://i.imgflip.com/5rdmnz.jpg")
+```
+]
+
+---
+
+class: middle
+
+.pull-left[
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Academic writing is wild bc you’ll read four articles just to write one sentence. <br><br>Anyway, here’s a thread of resources I’ve been using to speed through this review I’m working on:</p>&mdash; Anicca Harriot🔬 (@13adh13) <a href="https://twitter.com/13adh13/status/1406664117147123715?ref_src=twsrc%5Etfw">June 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
+
+--
+
+.pull-right[
+
+1. [Connected Papers](https://www.connectedpapers.com/)
+
+1. [Open knowledge map](https://openknowledgemaps.org/index)
+
+1. [Scholarcy plug-in for Chrome](https://chrome.google.com/webstore/detail/scholarcy-research-paper/oekgknkmgmaehhpegfeioenikocgbcib?hl=en-GB)
+
+1. [Speechify app](https://speechify.com/)
+
+1. [Scite](https://scite.ai/)
+
+]
+
+---
+
+background-image: url("https://pbs.twimg.com/profile_banners/1267524311277015042/1591036577/1500x500")
+background-position: 50% 60%
+background-size: 90%
+
+# .center[Connected Papers ]
+
+---
+
+background-image: url("https://pbs.twimg.com/profile_images/1267529009409208325/avWQ0zGg_400x400.jpg")
+background-position: 100% 5%
+background-size: 10%
+
+# Connected Papers 
+
+- "A visual tool to help researchers and practitioners find and explore academic papers."<sup>1</sup>
+
+--
+
+- "Connected Papers uses a single, user-chosen .red[‘origin paper’] to build a map of related research, based partly on overlapping citations. The service recently surpassed one million users" <sup>2</sup>
+
+--
+
+- [Demo](https://www.connectedpapers.com/)
+
+.footnote[
+
+[1] https://twitter.com/ConnectedPapers
+
+[2] Matthews, D. (2021). Drowning in the literature? These smart software tools can help. Nature, 597(7874), 141-142. https://www.nature.com/articles/d41586-021-02346-4
+]
+
+---
+
+background-image: url("https://openknowledgemaps.org/img/benefits-OKM/benefits-all3.png")
+background-position: 50% 80%
+background-size: 90%
+
+class: hide-count
+
+# .center[Open Knowledge Map]
+
+---
+
+# Open Knowledge Map
+
+- "Our Goal is to revolutionize discovery of scientific knowledge. We are building a visual interface that dramatically increases the visibility of research findings for science and society alike."
+
+--
+
+- "We are a `charitable non-profit` organization and we believe that a better way to explore and discover scientific knowledge will benefit us all."
+
+--
+
+- [demo](https://openknowledgemaps.org/index)
+
+.footnote[
+https://openknowledgemaps.org/about
+]
+
+---
+
+background-image: url("https://www.scholarcy.com/wp-content/uploads/2018/10/illustration.svg")
+background-size: content 
+
+# .center[Scholarcy plug-in for Chrome]
+
+---
+
+# Scholarcy for Chrome
+
+- "The AI-powered article summarizer"
+
+--
+
+- "reads your research articles, reports and book chapters in seconds and breaks them down into bite-sized sections"
+
+--
+
+- download from [here](https://chrome.google.com/webstore/detail/scholarcy-research-paper/oekgknkmgmaehhpegfeioenikocgbcib?hl=en-GB)
+
+--
+
+- [Demo](https://www.scholarcy.com/)
+
+.footnote[
+https://www.scholarcy.com/
+]
+
+---
+
+background-image: url("https://play-lh.googleusercontent.com/oo44kaSTZF6jrEoA3F7xBC3kO4U1cXjTgVwSxxfo4Ec5DG60jhVtHNjHW0DokyE_eJ5h")
+background-position: 98% 5%
+background-size: 7%
+
+# Speechify for Chrome
+
+--
+
+- "Reading is hard. Listening is easy. Listen to the things you normally read with the #1 text-to-speech AI reader."<sup>*</sup>
+
+--
+
+- few thousand words for a free trail
+
+
+- download from [here](https://chrome.google.com/webstore/detail/speechify-for-chrome/ljflmlehinmoeknoonhibbjpldiijjmm?hl=en-GB)
+
+.footnote[
+[*] https://speechify.com/
+]
+
+---
+background-image: url("https://pbs.twimg.com/profile_images/1052280849733955584/8fYtjSQd_400x400.jpg")
+background-position: 98% 5%
+background-size: 7%
+
+# scite_
+
+- "Organizing the world's knowledge 918m citation statements extracted and analyzed from over 27m full-text articles"
+
+--
+
+- "scite helps you see whether publications, research results, and claims have been **supported**, **contrasted**, or **mentioned** by other researchers."
+
+---
+background-image: url("https://pbs.twimg.com/profile_images/1052280849733955584/8fYtjSQd_400x400.jpg")
+background-position: 98% 5%
+background-size: 7%
+
+# scite_
+
+```{r}
+knitr::include_graphics("https://d1lv4filxk1370.cloudfront.net/assets/images/illustrations/cs_explainer.svg")
+```
+
+
+
+- [demo](https://scite.ai/home)
+
+---
+
+background-image: url("https://images.unsplash.com/photo-1484412509196-57eda96981e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80")
+background-position: 
+background-size: cover
+
+class: right
+
+# .white[ `r emo::ji("star_struck")` More resources:]
+
+--
+
+.yellow[Prof. Pat Thomson, blog [patter](https://patthomson.net/)]
+
+--
+
+.yellow[[Prof. Raul Pacheco-Vega](http://www.raulpacheco.org/)]
+
+--
+
+.yellow[Prof. Andy Field, [Discovering Statistics](https://www.discoveringstatistics.com/)]
+
+--
+
+.yellow[Join Twitter]
+
+
+---
+background-image: url("https://images.unsplash.com/photo-1526371233670-42d618efcec5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80")
+background-position: 
+background-size: cover
+
+# .white.big-text[Question & answer]
+
+---
+
+background-image: url("https://images.unsplash.com/photo-1499744937866-d7e566a20a61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80")
+background-position: 
+background-size: cover
+
+class: hide-count
