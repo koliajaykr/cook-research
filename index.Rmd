@@ -10,12 +10,13 @@ output:
     lib_dir: libs
     nature:
       # autoplay: 5000
+      ratio: 191:100
       highlightStyle: solarized-light
       highlightLanguage: ["r", "css", "yaml"]
       slideNumberFormat: "%current%/%total%" 
       highlightLines: true
       countIncrementalSlides: false
-      ratio: "16:9"
+      #ratio: "16:9"
 ---
 
 ```{r setup, include=FALSE}
